@@ -7,6 +7,8 @@ import {
   CardTitle,
   UncontrolledAlert,
   Modal,
+  Input,
+  Button,
 } from "reactstrap";
 import axios from "axios";
 import BookList from "views/map/BookList";
@@ -176,11 +178,11 @@ function Map() {
         alert("error.");
       });
 
-      if (isLoading) {
-        <section>
-          <p>Loading...</p>
-        </section>
-      }
+    if (isLoading) {
+      <section>
+        <p>Loading...</p>
+      </section>;
+    }
     // console.log('lockerlist',lockerList)
   }
   // console.log("lockerlist",lockerList)
@@ -193,17 +195,37 @@ function Map() {
       <div className="content">
         <div>
           <form>
-            <input
-              type="text"
-              //   maxLength="20"
-              className="search_input"
-              name="search"
-              placeholder="검색어를 입력해주세요."
-              ref={searchbookRef}
-            />
-            <button className="btn-search" type="submit" onClick={searchBook}>
-              검색
-            </button>
+            <div
+              style={{
+                display: "flex",
+                marginBottom: "10px",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <Input
+                type="text"
+                //   maxLength="20"
+                className="search_input"
+                name="search"
+                placeholder="검색어를 입력해주세요."
+                innerRef={searchbookRef}
+                style={{
+                  width: "70%",
+                }}
+              />
+              <Button
+                className="btn-simple"
+                color="info"
+                type="submit"
+                onClick={searchBook}
+                style={{
+                  width: "25%",
+                }}
+              >
+                검색
+              </Button>
+            </div>
           </form>
         </div>
         <Card>

@@ -12,7 +12,6 @@ import {
   Card,
 } from "reactstrap";
 
-
 function BookList(props) {
   // const [hiddenpassword, sethiddenpassword] = React.useState(true);
   // const [hiddenid, sethiddenid] = React.useState(false);
@@ -28,9 +27,7 @@ function BookList(props) {
   // };
   // console.log(props)
 
-
-
-  console.log("list전달받은값",props)
+  console.log("list전달받은값", props);
   return (
     <div>
       {/* <CardBody>
@@ -65,8 +62,7 @@ function BookList(props) {
 
       {props.bookList.map((book) => (
         <div>
-          <Alert color="info" >
-            
+          <Alert color="info">
             <BookItem
               //   key={donate.id}
               id={book.id}
@@ -74,8 +70,6 @@ function BookList(props) {
               bookLogDonateDateTime={book.bookLogDonateDateTime}
             />
           </Alert>
-
-          
         </div>
       ))}
       {/* {props.Receives.map((receive) => (

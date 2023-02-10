@@ -118,7 +118,7 @@ function Kakao() {
               name="search"
               placeholder="검색어를 입력해주세요."
               style={{
-                width: "70%",
+                width: "75%",
               }}
             />
             <Button

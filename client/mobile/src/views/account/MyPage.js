@@ -256,7 +256,6 @@ function MyPage(props) {
                     />
                   </FormGroup>
                 </Col>
-<<<<<<< HEAD
                 <Row style={{ justifyContent: "center" }}>
                   <button hidden={!verifiedPassword} onClick={modifyMyInfo}>
                     수정완료
@@ -269,12 +268,7 @@ function MyPage(props) {
                   >
                     취소
                   </button>
-=======
-                <Row style={{justifyContent:"center"}}>
-                  <button hidden={!verifiedPassword} onClick={modifyMyInfo}>수정완료</button>
-                  <button hidden={!verifiedPassword} onClick={()=>{setverifiedPassword(false)}}>취소</button>
                   <button>회원탈퇴</button>
->>>>>>> 322c2252ae5d4fe56837e0d91b9a7b12fec4b04f
                 </Row>
               </CardBody>
               <CardBody>
