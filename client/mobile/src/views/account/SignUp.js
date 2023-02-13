@@ -82,13 +82,17 @@ function SignUp(props) {
     event.preventDefault();
 
     const enteredEmail = emailInputRef.current.value;
+    console.log(enteredEmail);
     const email = {
       email: enteredEmail,
     };
     console.log(email);
     // axios.defaults.headers.post['Content-Type'] = 'application/json';
     axios
-      .post("https://i8b201.p.ssafy.io/backend/account/emailConfirm", email)
+      .post(
+        "https://i8b201.p.ssafy.io/backend/account/emailConfirm",
+        enteredEmail
+      )
       .then((response) => {
         console.log(response.data);
         setcertifyNumber(response.data);

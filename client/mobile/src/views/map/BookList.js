@@ -13,18 +13,18 @@ import {
 } from "reactstrap";
 
 function BookList(props) {
-
   console.log("list전달받은값", props);
   return (
     <div>
-
       {props.bookList.map((book) => (
         <div>
-<<<<<<< HEAD
-          <Alert color="info">
-=======
-          <Alert color="info" >
->>>>>>> f3f6dfd1b7c00c297fe982bfb7cbaf459e5141d5
+          <Alert
+            // color="info"
+            style={{
+              background: "#c1b5a9",
+              padding: "0rem 0.5rem 0rem 0.5rem",
+            }}
+          >
             <BookItem
               key={book.id}
               id={book.id}
@@ -34,7 +34,6 @@ function BookList(props) {
           </Alert>
         </div>
       ))}
-
     </div>
   );
 }

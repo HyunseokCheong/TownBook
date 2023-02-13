@@ -21,6 +21,7 @@ import {
   Modal,
   ModalHeader,
   ModalBody,
+  Label,
 } from "reactstrap";
 
 function MyPage(props) {
@@ -173,9 +174,6 @@ function MyPage(props) {
               <CardHeader>
                 <Row style={{ justifyContent: "space-between" }}>
                   <CardTitle tag="h4">내 정보</CardTitle>
-                  <Button onClick={toggleModalSearch} hidden={verifiedPassword}>
-                    개인정보수정
-                  </Button>
                 </Row>
               </CardHeader>
               <CardBody>
@@ -185,12 +183,12 @@ function MyPage(props) {
 
                 <Col hidden={!verifiedPassword}>
                   <FormGroup>
-                    <label>비밀번호</label>
-                    <input
+                    <Label>비밀번호</Label>
+                    <Input
                       //   defaultValue="비밀번호를 입력해주세요"
                       placeholder="비밀번호를 입력해주세요"
                       type="password"
-                      ref={pwInputRef}
+                      innerRef={pwInputRef}
                       // className={classes.style}
                     />
                   </FormGroup>
@@ -201,12 +199,12 @@ function MyPage(props) {
                 </Col>
                 <Col hidden={!verifiedPassword}>
                   <FormGroup>
-                    <label>닉네임</label>
-                    <input
+                    <Label>닉네임</Label>
+                    <Input
                       //   defaultValue="비밀번호를 입력해주세요"
                       placeholder="닉네임을 입력해주세요"
                       type="text"
-                      ref={nicknameInputRef}
+                      innerRef={nicknameInputRef}
                       // className={classes.style}
                     />
                   </FormGroup>
@@ -216,12 +214,12 @@ function MyPage(props) {
                 </Col>
                 <Col hidden={!verifiedPassword}>
                   <FormGroup>
-                    <label>생일</label>
-                    <input
+                    <Label>생일</Label>
+                    <Input
                       //   defaultValue="비밀번호를 입력해주세요"
                       placeholder="생일을 입력해주세요"
                       type="text"
-                      ref={birthdayInputRef}
+                      innerRef={birthdayInputRef}
                       // className={classes.style}
                     />
                   </FormGroup>
@@ -231,12 +229,12 @@ function MyPage(props) {
                 </Col>
                 <Col hidden={!verifiedPassword}>
                   <FormGroup>
-                    <label>주소</label>
-                    <input
+                    <Label>주소</Label>
+                    <Input
                       //   defaultValue="비밀번호를 입력해주세요"
                       placeholder="주소를 입력해주세요"
                       type="text"
-                      ref={addressInputRef}
+                      innerRef={addressInputRef}
                       // className={classes.style}
                     />
                   </FormGroup>
@@ -244,31 +242,35 @@ function MyPage(props) {
                 <Col hidden={verifiedPassword}>
                   연락처 : {localStorage.getItem("accountPhoneNumber")}
                 </Col>
+
                 <Col hidden={!verifiedPassword}>
                   <FormGroup>
-                    <label>연락처</label>
-                    <input
+                    <Label>연락처</Label>
+                    <Input
                       //   defaultValue="비밀번호를 입력해주세요"
                       placeholder="휴대폰 번호를 입력해주세요"
                       type="text"
-                      ref={phonenumberInputRef}
+                      innerRef={phonenumberInputRef}
                       // className={classes.style}
                     />
                   </FormGroup>
                 </Col>
                 <Row style={{ justifyContent: "center" }}>
-                  <button hidden={!verifiedPassword} onClick={modifyMyInfo}>
+                  <Button hidden={!verifiedPassword} onClick={modifyMyInfo}>
                     수정완료
-                  </button>
-                  <button
+                  </Button>
+                  <Button
                     hidden={!verifiedPassword}
                     onClick={() => {
                       setverifiedPassword(false);
                     }}
                   >
                     취소
-                  </button>
-                  <button>회원탈퇴</button>
+                  </Button>
+                  <Button onClick={toggleModalSearch} hidden={verifiedPassword}>
+                    개인정보수정
+                  </Button>
+                  <Button>회원탈퇴</Button>
                 </Row>
               </CardBody>
               <CardBody>
@@ -456,18 +458,18 @@ function MyPage(props) {
                 <FormGroup>
                   {/* <label>비밀번호</label> */}
                   <div>
-                    <input
+                    <Input
                       //   defaultValue="Mike"
                       placeholder="비밀번호를 입력해주세요"
                       type="text"
-                      ref={modalpwInputRef}
+                      innerRef={modalpwInputRef}
                       className={classes.style}
                     />
                   </div>
                 </FormGroup>
               </Col>
               <Row style={{ justifyContent: "center", paddingInline: 30 }}>
-                <button
+                <Button
                   className="btn-login"
                   // color="black"
                   type="submit"
@@ -478,7 +480,7 @@ function MyPage(props) {
                   className={classes.style}
                 >
                   확인
-                </button>
+                </Button>
               </Row>
             </div>
             <button
